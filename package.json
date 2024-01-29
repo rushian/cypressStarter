@@ -2,5 +2,12 @@
   "devDependencies": {
     "cypress": "^13.6.3",
     "cypress-cucumber-preprocessor": "^4.3.1"
+  },
+  "scripts": {
+    "test:chrome": "cypress run --browser chrome --no-exit --headed"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "stepDefinitions": "cypress/support/step_definitions"
   }
 }
