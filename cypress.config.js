@@ -1,13 +1,20 @@
-const { defineConfig } = require("cypress")
-const cucumber = require('cypress-cucumber-preprocessor').default
+const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
+  'cypress-cucumber-preprocessor': {
+   nonGlobalStepDefinitions: true,
+   step_definitions: 'cypress/integration/',    
+  },
   e2e: {
-    baseUrl: 'https://blazedemo.com',
-    "defaultCommandTimeout": 10000,
-    "specPattern": "**/*.feature",
     setupNodeEvents(on, config) {
-      on('file:preprocessor', cucumber())
+      return require('./cypress/plugins/index.js')(on, config)
     },
+    //specPattern: 'cypress/e2e/*.js',
+    specPattern: 'cypress/integration/*.feature',
+    screenshotsFolder: 'cypress/screenshots',
+    video: true,
+    videosFolder: 'cypress/videos',
+    defaultCommandTimeout: 5000,
+    baseUrl: 'https://blazedemo.com'
   },
 });
