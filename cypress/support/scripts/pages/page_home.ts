@@ -10,8 +10,6 @@ class HomePage {
     btnEncontrarVoos = () => { return 'Find Flights' }
 
 
-
-
     // Acessa o site que será testado
     acessarSite() {
         return cy.visit(url)

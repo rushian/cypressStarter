@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "noImplicitAny": false,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "ES6",
+    "lib": ["ES6", "dom"],
+    "strict": false,
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "outDir": "**/*.js",
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "types": [
+      "lodash",
+      "node",
+      "cypress",
+      "cypress-real-events",
+      "./cypress/support/commands.d.ts",
+      "./cypress/support/scripts/simulation/pages/SimulationCommands",
+      "./cypress/support/queryCommands"
+    ]
+  },
+  "include": ["*", "typings.d.ts", "**/*"]
+}

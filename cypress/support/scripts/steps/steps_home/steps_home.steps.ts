@@ -1,6 +1,6 @@
-import { Given,When,And,Then } from "cypress-cucumber-preprocessor/steps";
+import { Given,When,Then } from 'npm i '
 //const {  Given,When,Then,And  } = require('cucumber')
-import page01 from '../../support/pageObjects/HomePage.js'
+import page01 from '../../pages/page_home'
 
 Given(`I am on the home page`, () => {
     page01.acessarSite()

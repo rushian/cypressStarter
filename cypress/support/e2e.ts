@@ -1,5 +1,17 @@
 // ***********************************************************
-// This example support/e2e.js is processed and
+import './commands';
+import 'cypress-real-events/support';
+
+before(() => {
+    cy.log('e2e.js - BEFORE ALL')
+    //console.log('Escrita no console - teste')
+})
+
+after(() => {
+    cy.log('e2e.js - AFTER ALL')
+})
+
+// This example support/e2e.ts is processed and
 // loaded automatically before your test files.
 //
 // This is a great place to put global configuration and
@@ -12,16 +24,6 @@
 // You can read more here:
 // https://on.cypress.io/configuration
 // ***********************************************************
-
 // Import commands.js using ES2015 syntax:
-import { command } from 'commander'
-import './commands'
-
-before(() => {
-    cy.log('e2e.js - BEFORE ALL')
-    console.log('Escrita no console - teste')
-})
-
-after(() => {
-    cy.log('e2e.js - AFTER ALL')
-})
+// Alternatively you can use CommonJS syntax:
+// require('./commands')
